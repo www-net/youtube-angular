@@ -6,6 +6,7 @@ import { SearchResultsComponent } from './search/search-results/search-results.c
 import { SearchItemComponent } from './search/search-item/search-item.component';
 import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FilterComponent } from './filter/filter.component';
     FilterComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
