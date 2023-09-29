@@ -2,3 +2,37 @@
   min-height: 80px;
   background-color: #e5e5e5;
 }
+
+.header-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "left-h-top center-h-top center-h-top right-h-top"
+    "left-h-bottom center-h-bottom center-h-bottom righth-h-bottom"
+  ;
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px;
+}
+
+.search-block {
+  grid-area: center-h-top;
+  display: flex;
+  align-items: center;
+}
+
+.logo-link {
+  margin-right: 10px;
+}
+
+.logo-img {
+  display: block;
+}
+
+.search {
+  width: 100%;
+}
+
+.header-filter {
+  grid-area: center-h-bottom;
+}

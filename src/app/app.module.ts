@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { FilterComponent } from './filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from './material-design/material-design.module';
+import { SearchInputComponent } from './search-input/search-input.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { MaterialDesignModule } from './material-design/material-design.module';
     SearchResultsComponent,
     SearchItemComponent,
     FilterComponent,
+    SearchInputComponent,
   ],
   imports: [
     BrowserModule,

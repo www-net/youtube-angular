@@ -1,0 +1,28 @@
+.header-form {
+  display: flex;
+  min-width: 150px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.mat-form-header {
+  width: 100%;
+}
+
+.search-button {
+  margin-left: -5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: var(--basic-blue);
+}
+
+.mat-form-header .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border-bottom-color: var(--basic-blue);
+}
+
+.mat-mdc-raised-button {
+  box-shadow: none;
+}
