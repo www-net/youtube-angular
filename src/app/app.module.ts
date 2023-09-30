@@ -9,6 +9,7 @@ import { FilterComponent } from './filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialDesignModule } from './material-design/material-design.module';
 import { SearchInputComponent } from './search-input/search-input.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { SearchInputComponent } from './search-input/search-input.component';
     SearchItemComponent,
     FilterComponent,
     SearchInputComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

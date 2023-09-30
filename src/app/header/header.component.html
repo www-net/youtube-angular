@@ -1,15 +1,23 @@
 <header class="header">
-  <div class="header-wrapper">
-    <div class="search-block">
+  <div class="header__wrapper">
+    <div class="header__search-block">
+
       <a class="logo-link" href="">
         <img class="logo-img" src="../../assets/img/logo/logo.png" alt="">
       </a>
+
       <div class="search">
         <app-search-input (clickTune)="toggleDisplaysFilter()"></app-search-input>
       </div>
     </div>
+
+    <div class="user">
+      <app-login></app-login>
+    </div>
+
     <div class="header-filter">
       <app-filter *ngIf="isFilterDisplayed"></app-filter>
     </div>
   </div>
+
 </header>

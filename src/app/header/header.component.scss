@@ -3,7 +3,7 @@
   background-color: #e5e5e5;
 }
 
-.header-wrapper {
+.header__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-areas:
@@ -15,7 +15,7 @@
   padding: 30px;
 }
 
-.search-block {
+.header__search-block {
   grid-area: center-h-top;
   display: flex;
   align-items: center;
@@ -31,6 +31,13 @@
 
 .search {
   width: 100%;
+}
+
+.user {
+  grid-area: right-h-top;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .header-filter {
