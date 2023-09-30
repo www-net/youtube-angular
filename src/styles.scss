@@ -2,6 +2,8 @@
 
 :root {
   --basic-blue: #2F80ED;
+  --basic-gray: #e5e5e5;
+  --white: #ffffff;
 }
 
 html, body { height: 100%; }
@@ -23,4 +25,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // bottom search border-line color
 .mat-form-header .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
   border-bottom-color: var(--basic-blue);
+}
+// -----
+
+// цвет подчеркивания инпута в фильтре
+.filter .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border-bottom-color: var(--basic-blue);
+}
+
+// блок фильтр. цвет лейбла в инпуте
+.filter .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label, .mdc-text-field--filled:not(.mdc-text-field--disabled).mdc-text-field--focused .mdc-floating-label--float-above {
+  color: var(--basic-blue);
 }
