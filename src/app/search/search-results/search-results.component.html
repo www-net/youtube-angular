@@ -1,1 +1,6 @@
-<p>search-results works!</p>
+  <mat-grid-list cols="4" rowHeight="330">
+    <mat-grid-tile *ngFor="let item of videos.items">
+      <app-search-item [response]="item"></app-search-item>
+    </mat-grid-tile>
+
+  </mat-grid-list>

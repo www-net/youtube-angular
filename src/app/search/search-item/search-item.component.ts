@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ISearchItems } from '../search-response.model';
 
 @Component({
   selector: 'app-search-item',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./search-item.component.scss']
 })
 export class SearchItemComponent {
+
+@Input() response: ISearchItems | undefined
 
 }
