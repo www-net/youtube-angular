@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SearchResultsComponent } from './search/search-results/search-results.component';
@@ -26,6 +27,7 @@ import { LoginComponent } from './header/login/login.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialDesignModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./search-input.component.scss']
 })
 export class SearchInputComponent {
+
   @Output() clickTune: EventEmitter<boolean> = new EventEmitter<boolean>()
 
   onTuneClick(){
