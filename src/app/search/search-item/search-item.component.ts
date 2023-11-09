@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ISearchItems } from '../search-response.model';
+import { ISearchItem } from '../search-item.model';
 
 @Component({
   selector: 'app-search-item',
@@ -8,6 +8,6 @@ import { ISearchItems } from '../search-response.model';
 })
 export class SearchItemComponent {
 
-@Input() response: ISearchItems | undefined
+@Input() cardData!: ISearchItem
 
 }

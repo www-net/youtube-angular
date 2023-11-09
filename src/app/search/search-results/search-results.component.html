@@ -1,6 +1,6 @@
-  <mat-grid-list cols="4" rowHeight="330">
-    <mat-grid-tile *ngFor="let item of response.items">
-      <app-search-item [response]="item"></app-search-item>
+  <mat-grid-list class="search-results" cols="4" rowHeight="360">
+    <mat-grid-tile *ngFor="let item of response.items; trackBy: trackByFn">
+      <app-search-item [cardData]="item"></app-search-item>
     </mat-grid-tile>
 
   </mat-grid-list>
