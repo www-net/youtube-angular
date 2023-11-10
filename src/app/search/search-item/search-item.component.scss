@@ -1,13 +1,29 @@
-.video-card {
-  border: 1px solid black;
-  width: 280px;
+:host {
+  width: 450px;
+
+  border-radius: 5px;
+  border-bottom: 10px solid red;
+  background: #e1e1e1;
 }
 
 .video-card_img {
   display: block;
-  width: 223px;
+  width: 400px;
   height: auto;
   margin: auto;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-icon {
+width: 25px;
+}
+
+.mdc-button{
+  min-width: auto;
 }
 
 .card_mat-header {
@@ -19,3 +35,5 @@
   display: flex;
   justify-content: center;
 }
+
+

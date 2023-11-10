@@ -1,15 +1,15 @@
-<mat-card class="video-card">
+<mat-card>
   <mat-card-content>
     <img class="video-card_img" mat-card-image [src]="cardData.snippet.thumbnails.medium.url" width="223" [alt]="cardData.snippet.title">
     <mat-card-actions>
       <mat-icon color="primary">visibility</mat-icon>
-      <button mat-button>{{cardData.statistics.viewCount}}</button>
-      <!-- <mat-icon color="primary">thumb_up</mat-icon> -->
-      <button mat-button>{{cardData.statistics.likeCount}}</button>
-      <!-- <mat-icon color="primary">thumb_down</mat-icon> -->
-      <button mat-button>{{cardData.statistics.dislikeCount}}</button>
-      <!-- <mat-icon color="primary">forum</mat-icon> -->
-      <button mat-button>{{cardData.statistics.commentCount}}</button>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.viewCount | number}}</button>
+      <mat-icon color="primary">thumb_up</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.likeCount | number}}</button>
+      <mat-icon color="primary">thumb_down</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.dislikeCount | number}}</button>
+      <mat-icon color="primary">forum</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.commentCount | number}}</button>
     </mat-card-actions>
   </mat-card-content>
 
