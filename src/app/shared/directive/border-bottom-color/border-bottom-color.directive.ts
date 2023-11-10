@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
 
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24
 const SIX_MONTH = Math.floor(365 / 2)
@@ -39,6 +39,8 @@ export class BorderBottomColorDirective implements AfterViewInit {
     const now: Date = new Date()
     const diffMilliseconds: number = now.getTime() - receiveDate.getTime()
     const numberOfDays = Math.floor(diffMilliseconds / MILLISECONDS_IN_DAY)
+    this.elRef.nativeElement.style.borderBottom = '10px solid transparent'
+    this.elRef.nativeElement.style.borderRadius = '5px'
     this.elRef.nativeElement.style.borderColor = getColor(numberOfDays)
   }
 }
