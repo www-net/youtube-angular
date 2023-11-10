@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core'
 
 const MILLISECONDS_IN_DAY = 1000 * 60 * 60 * 24
 const SIX_MONTH = Math.floor(365 / 2)
@@ -10,13 +10,13 @@ function getColor(numberOfDays: number): string {
   switch (true) {
     case numberOfDays < 7:
       color = '#3f51b5'
-      break;
+      break
     case numberOfDays >= 7 && numberOfDays < ONE_MONTH:
       color = '#27AE60'
-      break;
+      break
     case numberOfDays >= ONE_MONTH && numberOfDays < SIX_MONTH:
       color = '#F2C94C'
-      break;
+      break
     default:
       color = '#EB5757'
   }
@@ -25,7 +25,7 @@ function getColor(numberOfDays: number): string {
 }
 
 @Directive({
-  selector: '[appBorderBottomColor]'
+  selector: '[appBorderBottomColor]',
 })
 export class BorderBottomColorDirective implements AfterViewInit {
   @Input('appBorderBottomColor') date!: string

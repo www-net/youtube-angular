@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { ISearchItem } from '../search-item.model';
+import { Component, Input } from '@angular/core'
+import { ISearchItem } from '../search-item.model'
 
 @Component({
   selector: 'app-search-item',

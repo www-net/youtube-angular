@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'app-header',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isFilterDisplayed = false;
+  isFilterDisplayed = false
 
   toggleDisplaysFilter() {
     this.isFilterDisplayed = !this.isFilterDisplayed

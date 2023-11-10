@@ -1,5 +1,5 @@
   <mat-grid-list class="search-results" cols="3" rowHeight="450">
-    <mat-grid-tile *ngFor="let item of response.items; trackBy: trackByFn">
+    <mat-grid-tile *ngFor="let item of response.items trackBy: trackByFn">
       <app-search-item
       [cardData]="item"
       [appBorderBottomColor]="item.snippet.publishedAt"
