@@ -1,20 +1,23 @@
-<mat-card class="video-card">
+<mat-card>
   <mat-card-content>
-    <img class="video-card_img" mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" width="223"
-      alt="">
+    <img class="video-card_img" mat-card-image [src]="cardData.snippet.thumbnails.medium.url" width="223" [alt]="cardData.snippet.title">
     <mat-card-actions>
-      <button mat-button>watched 300</button>
-      <button mat-button>likes 300</button>
-      <button mat-button>dislikes 300</button>
-      <button mat-button>comments 300</button>
+      <mat-icon color="primary">visibility</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.viewCount | number}}</button>
+      <mat-icon color="primary">thumb_up</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.likeCount | number}}</button>
+      <mat-icon color="primary">thumb_down</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.dislikeCount | number}}</button>
+      <mat-icon color="primary">forum</mat-icon>
+      <button class="video-card_btn" mat-button>{{cardData.statistics.commentCount | number}}</button>
     </mat-card-actions>
   </mat-card-content>
 
   <mat-card-header class="card_mat-header">
-    <mat-card-title>Kuji podcast #20</mat-card-title>
+    <mat-card-title>{{cardData.snippet.title}}</mat-card-title>
   </mat-card-header>
 
   <mat-card-footer class="card_mat-footer">
-    <button mat-raised-button color="primary">more</button>
+    <button mat-raised-button color="primary">more&hellip;</button>
   </mat-card-footer>
 </mat-card>

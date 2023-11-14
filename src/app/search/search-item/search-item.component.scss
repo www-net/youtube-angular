@@ -1,6 +1,29 @@
+:host {
+  width: 450px;
+}
+
+.mat-mdc-card {
+  background: #e1e1e1;
+}
+
 .video-card_img {
   display: block;
+  width: 400px;
+  height: auto;
   margin: auto;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-icon {
+width: 25px;
+}
+
+.mdc-button{
+  min-width: auto;
 }
 
 .card_mat-header {
@@ -12,3 +35,5 @@
   display: flex;
   justify-content: center;
 }
+
+
