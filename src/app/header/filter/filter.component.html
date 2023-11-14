@@ -12,7 +12,13 @@
         <span class="filter__form-text">by word or sentance</span>
         <mat-form-field class="mat-form-filter">
           <mat-label>filter</mat-label>
-          <input matInput type="text" placeholder="" value="">
+          <input
+            matInput
+            type="text"
+            placeholder=""
+            [(ngModel)]="filterValue"
+            (ngModelChange)="setFilterValue()"
+            >
         </mat-form-field>
       </form>
     </li>
