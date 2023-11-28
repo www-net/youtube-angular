@@ -1,9 +1,16 @@
 :host {
+  display: block;
   width: 450px;
 }
 
 .mat-mdc-card {
+  height: 410px;
+
   background: #e1e1e1;
+}
+
+.mat-mdc-card-content {
+  padding: 0 10px;
 }
 
 .video-card_img {
@@ -27,13 +34,19 @@ width: 25px;
 }
 
 .card_mat-header {
-  justify-content: end;
+  justify-content: center;
   margin: 0 10px;
+}
+
+.mat-mdc-card-header {
+  padding: 0 10px;
 }
 
 .card_mat-footer {
   display: flex;
   justify-content: center;
+  margin-top: auto;
+  margin-bottom: 5px;
 }
 
 
