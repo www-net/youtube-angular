@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   margin: 0;
+  margin-left: auto;
   padding: 0;
   list-style: none;
 
@@ -32,11 +33,13 @@
 
 .mat-form-filter {
   margin-top: 7px;
+  width: 115%;
 }
 
-.filter__btn--underline {
-  text-decoration: underline;
+.mat-mdc-text-field-wrapper {
+  width: 115%;
 }
+
 
 .filter__form-text {
   margin: 0 10px;

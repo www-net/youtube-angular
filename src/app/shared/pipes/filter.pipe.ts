@@ -6,12 +6,23 @@ import { ISearchItem } from 'src/app/search/search-item.model'
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(items: ISearchItem[], filterValue: string): ISearchItem[] {
-    if(!filterValue){
+  transform(items: ISearchItem[], filterValue?: string): ISearchItem[] {
+    if (!filterValue) {
       return items
     }
 
-    return items.filter((item) => item.snippet.title.toLowerCase().includes(filterValue))
+
+    let newItems: ISearchItem[] = []
+
+    if (filterValue) {
+      newItems = this.filter(items, filterValue)
+    }
+
+    return newItems
+
   }
 
+  filter(items: ISearchItem[], filterValue: string) {
+    return items.filter((item) => item.snippet.title.toLowerCase().includes(filterValue))
+  }
 }
