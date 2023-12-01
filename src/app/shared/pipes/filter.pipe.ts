@@ -11,6 +11,17 @@ export class FilterPipe implements PipeTransform {
       return items
     }
 
+    let newItems: ISearchItem[] = [...items]
+
+    if(filterValue) {
+      newItems = this.filter(newItems, filterValue)
+    }
+
+    return newItems
+
+  }
+
+  filter(items: ISearchItem[], filterValue: string) {
     return items.filter((item) => item.snippet.title.toLowerCase().includes(filterValue))
   }
 

@@ -12,7 +12,7 @@ export class SortPipe implements PipeTransform {
       return items
     }
 
-    let newItems: ISearchItem[] = items;
+    let newItems: ISearchItem[] = [...items];
     
     if (Object.keys(sortSettings).length) {
       newItems = this.sort(newItems, sortSettings)
@@ -33,7 +33,7 @@ export class SortPipe implements PipeTransform {
 
       return order === 'ASC' ? firstValue - secondValue : secondValue - firstValue
     } 
-    
+
     return 0
   }
 }
