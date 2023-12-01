@@ -12,7 +12,8 @@ import { MaterialDesignModule } from './material-design/material-design.module'
 import { SearchInputComponent } from './header/search-input/search-input.component'
 import { LoginComponent } from './header/login/login.component'
 import { BorderBottomColorDirective } from './shared/directive/border-bottom-color/border-bottom-color.directive'
-import { FilterPipe } from './shared/pipes/filter.pipe'
+import { FilterPipe } from './shared/pipes/filter.pipe';
+import { SortPipe } from './shared/pipes/sort.pipe'
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FilterPipe } from './shared/pipes/filter.pipe'
     LoginComponent,
     BorderBottomColorDirective,
     FilterPipe,
+    SortPipe,
   ],
   imports: [
     BrowserModule,

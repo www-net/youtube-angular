@@ -3,6 +3,7 @@ import { ISearchResponse } from '../search-response.model'
 import { response } from '../search-results/mock-response.model'
 import { ISearchItem } from '../search-item.model'
 import { FilterService } from 'src/app/shared/services/filter.service'
+import { SortService } from 'src/app/shared/services/sort.service'
 
 
 @Component({
@@ -14,7 +15,7 @@ export class SearchResultsComponent {
 
   response: ISearchResponse
 
-  constructor(public filter: FilterService) {
+  constructor(public filter: FilterService, public sort: SortService) {
     this.response = response
   }
 

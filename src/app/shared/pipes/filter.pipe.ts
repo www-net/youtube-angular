@@ -6,7 +6,7 @@ import { ISearchItem } from 'src/app/search/search-item.model'
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(items: ISearchItem[], filterValue: string): ISearchItem[] {
+  transform(items: ISearchItem[], filterValue?: string): ISearchItem[] {
     if(!filterValue){
       return items
     }

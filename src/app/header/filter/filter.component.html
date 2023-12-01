@@ -2,10 +2,16 @@
   <span class="filter__text">Sorting by:</span>
   <ul class="filter__list">
     <li>
-      <button class="filter__btn filter__btn--underline">date</button>
+      <button class="filter__btn filter__btn--underline" 
+        [attr.data-sort]="'date'"
+        (click)="handleSortClick($event)">date<span #date></span>
+      </button>
     </li>
     <li>
-      <button class="filter__btn filter__btn--underline">count of views</button>
+      <button class="filter__btn filter__btn--underline" 
+        [attr.data-sort]="'views'" 
+        (click)="handleSortClick($event)">count of views <span #views></span>
+      </button>
     </li>
     <li>
       <form class="filter__form" action="">
