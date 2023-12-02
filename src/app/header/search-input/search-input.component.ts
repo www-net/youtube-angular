@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core'
 import { FilterService } from 'src/app/shared/services/filter.service'
+import { ResultsService } from 'src/app/shared/services/results.service'
 
 @Component({
   selector: 'app-search-input',
@@ -10,8 +11,18 @@ export class SearchInputComponent {
 
   @Output() clickTune: EventEmitter<boolean> = new EventEmitter<boolean>()
 
-  constructor(private filter: FilterService) {
+  constructor(private filter: FilterService, private results: ResultsService) {
 
+  }
+
+  value = ''
+
+  onClickSearchButton(){
+    if(this.value.trim()) {
+      this.results.isShow = true
+    } else {
+      this.results.isShow = false
+    }
   }
 
   onTuneClick(){

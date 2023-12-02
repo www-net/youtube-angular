@@ -4,6 +4,7 @@ import { response } from '../search-results/mock-response.model'
 import { ISearchItem } from '../search-item.model'
 import { FilterService } from 'src/app/shared/services/filter.service'
 import { SortService } from 'src/app/shared/services/sort.service'
+import { ResultsService } from 'src/app/shared/services/results.service'
 
 
 @Component({
@@ -15,8 +16,12 @@ export class SearchResultsComponent {
 
   response: ISearchResponse
 
-  constructor(public filter: FilterService, public sort: SortService) {
+  constructor(public filter: FilterService, public sort: SortService, public searchResult: ResultsService) {
     this.response = response
+  }
+
+  isShowResults() {
+    return this.searchResult.isShow
   }
 
   trackByFn(index: number, item: ISearchItem) {
