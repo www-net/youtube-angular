@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ResultsService {
-  _isShow = false
+  private isShowResults = false
 
   get isShow() {
-    return this._isShow
+    return this.isShowResults
   }
 
   set isShow(isClickSearchButton) {
-    this._isShow = isClickSearchButton
+    this.isShowResults = isClickSearchButton
   }
 }
