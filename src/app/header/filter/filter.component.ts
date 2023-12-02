@@ -40,19 +40,16 @@ export class FilterComponent {
 
     if (!this.sort.property) {
       setSortWhenFirstClick()
-    } else {
-      if (this.sort.property !== dataSortAttr) {
-        if(dataSortAttr === 'date'){
-          this.views.nativeElement.innerHTML = ''
-        } else {
-          this.date.nativeElement.innerHTML = ''
-        }
-        setSortWhenFirstClick()
+    } else if (this.sort.property !== dataSortAttr) {
+      if (dataSortAttr === 'date') {
+        this.views.nativeElement.innerHTML = ''
       } else {
-        this.sort.order = this.sort.order === 'ASC' ? 'DESC' : 'ASC'
+        this.date.nativeElement.innerHTML = ''
       }
+      setSortWhenFirstClick()
+    } else {
+      this.sort.order = this.sort.order === 'ASC' ? 'DESC' : 'ASC'
     }
-
     span.innerHTML = this.sort.order === 'ASC' ? arrowTop : arrowBottom
 
     this.setSortValue()
