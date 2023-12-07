@@ -1,10 +1,10 @@
 import { Component } from '@angular/core'
-import { ISearchResponse } from '../search-response.model'
-import { response } from '../search-results/mock-response.model'
-import { ISearchItem } from '../search-item.model'
-import { FilterService } from 'src/app/shared/services/filter.service'
-import { SortService } from 'src/app/shared/services/sort.service'
-import { ResultsService } from 'src/app/shared/services/results.service'
+import { ISearchResponse } from '../../models/search-response.model'
+import { response } from './mock-response.model'
+import { ISearchItem } from '../../models/search-item.model'
+import { FilterService } from 'src/app/youtube/services/filter.service'
+import { SortService } from 'src/app/youtube/services/sort.service'
+import { ResultsService } from 'src/app/youtube/services/results.service'
 
 
 @Component({

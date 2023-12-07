@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core'
-import { FilterService } from 'src/app/shared/services/filter.service'
-import { ResultsService } from 'src/app/shared/services/results.service'
+import { FilterService } from 'src/app/youtube/services/filter.service'
+import { ResultsService } from 'src/app/youtube/services/results.service'
 
 @Component({
   selector: 'app-search-input',

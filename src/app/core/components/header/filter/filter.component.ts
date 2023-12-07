@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core'
-import { FilterService } from 'src/app/shared/services/filter.service'
+import { FilterService } from 'src/app/youtube/services/filter.service'
 import { ISort, TSortValue } from './sort.model'
-import { SortService } from 'src/app/shared/services/sort.service'
+import { SortService } from 'src/app/youtube/services/sort.service'
 
 const arrowTop = '↑'
 const arrowBottom = '↓'

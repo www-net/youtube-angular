@@ -1,4 +1,4 @@
-import { ISearchResponse } from '../search-response.model'
+import { ISearchResponse } from '../../models/search-response.model'
 
 export const response: ISearchResponse = {
   "kind": "youtube#videoListResponse",
