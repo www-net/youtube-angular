@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core'
+import { Router } from '@angular/router'
 import { FilterService } from 'src/app/youtube/services/filter.service'
 import { ResultsService } from 'src/app/youtube/services/results.service'
 
@@ -11,7 +12,7 @@ export class SearchInputComponent {
 
   @Output() clickTune: EventEmitter<boolean> = new EventEmitter<boolean>()
 
-  constructor(private filter: FilterService, private results: ResultsService) {
+  constructor(private filter: FilterService, private results: ResultsService, private router: Router) {
 
   }
 
@@ -20,8 +21,7 @@ export class SearchInputComponent {
   onClickSearchButton(){
     if(this.value.trim()) {
       this.results.isShow = true
-    } else {
-      this.results.isShow = false
+      this.router.navigate(['youtube'])
     }
   }
 

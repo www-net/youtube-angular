@@ -10,6 +10,7 @@ import { HeaderComponent } from './core/components/header/header.component'
 import { FilterComponent } from './core/components/header/filter/filter.component'
 import { SearchInputComponent } from './core/components/header/search-input/search-input.component'
 import { LoginComponent } from './core/components/header/login/login.component'
+import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { LoginComponent } from './core/components/header/login/login.component'
     FilterComponent,
     SearchInputComponent,
     LoginComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
