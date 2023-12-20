@@ -8,13 +8,14 @@
 .error-wrapper {
     position: relative;
     margin-top: 30vh;
+    padding-left: 140px;
 
     &::before {
         content: '';
 
         position: absolute;
         top: 50%;
-        left: -134px;
+        left: 0;
 
         width: 108px;
         height: 100px;

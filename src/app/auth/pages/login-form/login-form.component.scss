@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  .login {
+    background: #F2F2F2;
+    border-radius: 5px;
+    padding: 3rem 2rem;
+  }
+  
+  .login__form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login__field {
+    width: 300px;
+  }
