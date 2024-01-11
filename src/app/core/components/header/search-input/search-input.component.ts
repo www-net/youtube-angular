@@ -21,7 +21,7 @@ export class SearchInputComponent {
   onClickSearchButton(){
     if(this.value.trim()) {
       this.results.isShow = true
-      this.router.navigate(['youtube'])
+      this.router.navigate(['/youtube'])
     }
   }
 

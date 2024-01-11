@@ -11,6 +11,7 @@ import { FilterComponent } from './core/components/header/filter/filter.componen
 import { SearchInputComponent } from './core/components/header/search-input/search-input.component'
 import { LoginComponent } from './core/components/header/login/login.component'
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
+import { AuthModule } from './auth/auth.module'
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-foun
     BrowserAnimationsModule,
     MaterialDesignModule,
     FormsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

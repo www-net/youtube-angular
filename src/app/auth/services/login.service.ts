@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
 const token = 'auth_token'
 
@@ -8,23 +8,19 @@ export interface ILogin {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
 
   login({login, password}: ILogin) {
-    localStorage.setItem(token, `${login}.${password}`)
+    sessionStorage.setItem(token, `${login}.${password}`)
   }
 
   logout() {
-    localStorage.removeItem(token);
+    sessionStorage.removeItem(token)
   }
 
-  // ---------------------
-  // доработать проверку  
-  // ---------------------
-
-  isLogin() {
-    return localStorage.getItem(token)
+  isLoggedIn() {
+    return !!sessionStorage.getItem(token)
   }
 }

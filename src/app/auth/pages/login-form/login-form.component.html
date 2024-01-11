@@ -2,26 +2,26 @@
     <div class="login">
       <h2>Login</h2>
       <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
-  
+
         <mat-form-field class="login__field" appearance="fill">
           <mat-label>Enter your Login</mat-label>
           <input type="text" matInput placeholder="Done Joe" formControlName="login">
           <mat-error *ngIf="login?.invalid">Enter valid Login</mat-error>
         </mat-form-field>
-  
+
         <mat-form-field class="login__field" appearance="fill">
           <mat-label>Enter your password</mat-label>
           <input type="password" matInput placeholder="******" formControlName="password">
           <mat-error *ngIf="password?.invalid">Enter valid password</mat-error>
         </mat-form-field>
-  
+
         <button
           type="submit"
           mat-raised-button
           color="primary"
-          [disabled]="!form.valid"
+          [disabled]="form.invalid"
         >Login</button>
-  
+
       </form>
     </div>
   </div>

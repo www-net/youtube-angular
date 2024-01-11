@@ -1,22 +1,28 @@
-import { Component } from '@angular/core'
-import { FormBuilder, FormControl, Validators, } from '@angular/forms'
-import { LoginService } from '../../services/login.service'
+import { Component, OnInit } from '@angular/core'
+import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms'
+import { LoginService, ILogin } from '../../services/login.service'
 import { Router } from '@angular/router'
 
+// минимальная длина пароля
+const minLength = 6
 
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent {
-  form = this.fb.group({
-    login: ['', [Validators.required, this.checkLength]],
-    password: ['', [Validators.required, this.checkLength]],
-  })
+export class LoginFormComponent implements OnInit {
+  form!: FormGroup
+
+
+  ngOnInit(): void {
+    this.form = new FormGroup({
+      login: new FormControl('', [Validators.email, Validators.required]),
+      password: new FormControl('', [Validators.required, this.checkLength])
+    })
+  }
 
   constructor(
-    private fb: FormBuilder,
     private loginService: LoginService,
     private router: Router,
   ) {
@@ -29,14 +35,16 @@ export class LoginFormComponent {
     this.router.navigate(['/youtube'])
   }
 
-  checkLength(control: FormControl) {
-    if (control.value.trim().length === 0) {
+  // проверка длины пароля
+  checkLength(control: FormControl): ValidationErrors | null {
+    if (control.value.trim().length < minLength) {
       return {
         lengthError: true,
       }
     }
     return null
   }
+
 
   get login() {
     return this.form.get('login')
