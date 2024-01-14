@@ -8,6 +8,7 @@ import { FilterPipe } from "./pipes/filter.pipe"
 import { SortPipe } from "./pipes/sort.pipe"
 import { BorderBottomColorDirective } from "./directives/border-bottom-color/border-bottom-color.directive"
 import { YoutubeRoutingModule } from "./youtube-routing.module"
+import { DetailedInformationComponent } from './pages/detailed-information/detailed-information.component'
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { YoutubeRoutingModule } from "./youtube-routing.module"
         FilterPipe,
         SortPipe,
         BorderBottomColorDirective,
+        DetailedInformationComponent,
     ],
     imports: [
         CommonModule,

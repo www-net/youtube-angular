@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ISearchResponse } from '../../models/search-response.model'
-import { response } from './mock-response.model'
+import { response } from '../../models/mock-response.model'
 import { ISearchItem } from '../../models/search-item.model'
 import { FilterService } from 'src/app/youtube/services/filter.service'
 import { SortService } from 'src/app/youtube/services/sort.service'

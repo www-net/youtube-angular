@@ -1,0 +1,36 @@
+<div class="item">
+  <a class="back-button" routerLink="../">
+    <mat-icon class="arrow-back">arrow_back_ios</mat-icon>
+  </a>
+  <div class="video">
+    <img [src]="cardData.snippet.thumbnails.maxres.url" width="704" height="396" alt="preview image" />
+  </div>
+  <div class="right-side">
+    <div class="right-side__container">
+      <h1 class="title">{{ cardData.snippet.title }}</h1>
+      <div class="date">{{ cardData.snippet.publishedAt | date:'fullDate' }}</div>
+      <div class="description">
+        <h4>Description:</h4>
+        <p>{{ cardData.snippet.description }}</p>
+      </div>
+    </div>
+    <ul class="statistics">
+      <li class="view-count">
+        <mat-icon color="primary">visibility</mat-icon>
+        {{ cardData.statistics.viewCount | number }}
+      </li>
+      <li class="like-count">
+        <mat-icon color="primary">thumb_up</mat-icon>
+        {{ cardData.statistics.likeCount | number }}
+      </li>
+      <li class="dislike-count">
+        <mat-icon color="primary">thumb_down</mat-icon>
+        {{ cardData.statistics.dislikeCount | number }}
+      </li>
+      <li class="comment-count">
+        <mat-icon color="primary">forum</mat-icon>
+        {{ cardData.statistics.commentCount | number }}
+      </li>
+    </ul>
+  </div>
+</div>

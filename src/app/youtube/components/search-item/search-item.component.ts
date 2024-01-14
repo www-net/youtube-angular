@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 import { ISearchItem } from '../../models/search-item.model'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-search-item',
@@ -9,5 +10,11 @@ import { ISearchItem } from '../../models/search-item.model'
 export class SearchItemComponent {
 
 @Input() cardData!: ISearchItem
+
+constructor(private router: Router) {}
+
+onButtonClick(item: ISearchItem) {
+  this.router.navigate(['/youtube', item.id])
+}
 
 }
