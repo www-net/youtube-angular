@@ -1,0 +1,33 @@
+<div class="filter">
+  <span class="filter__text">Sorting by:</span>
+  <ul class="filter__list">
+    <li>
+      <button class="filter__btn filter__btn--underline" 
+        [attr.data-sort]="'date'"
+        (click)="handleSortClick($event)">date<span #date></span>
+      </button>
+    </li>
+    <li>
+      <button class="filter__btn filter__btn--underline" 
+        [attr.data-sort]="'views'" 
+        (click)="handleSortClick($event)">count of views <span #views></span>
+      </button>
+    </li>
+    <li>
+      <form class="filter__form" action="">
+        <span class="filter__form-text">by word or sentance</span>
+        <mat-form-field class="mat-form-filter">
+          <mat-label>filter</mat-label>
+          <input
+            matInput
+            type="text"
+            name="filter"
+            placeholder=""
+            [(ngModel)]="filterValue"
+            (ngModelChange)="setFilterValue()"
+            >
+        </mat-form-field>
+      </form>
+    </li>
+  </ul>
+</div>

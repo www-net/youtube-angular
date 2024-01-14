@@ -1,0 +1,9 @@
+  <mat-grid-list class="search-results" cols="3" rowHeight="450" *ngIf="isShowResults()">
+    <mat-grid-tile *ngFor="let item of (response.items | filter:filter.value | sort:sort.value) trackBy:trackByFn">
+      <app-search-item
+      [cardData]="item"
+      [appBorderBottomColor]="item.snippet.publishedAt"
+      ></app-search-item>
+    </mat-grid-tile>
+
+  </mat-grid-list>

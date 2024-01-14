@@ -1,0 +1,52 @@
+:host {
+  display: block;
+  width: 450px;
+}
+
+.mat-mdc-card {
+  height: 410px;
+
+  background: #e1e1e1;
+}
+
+.mat-mdc-card-content {
+  padding: 0 10px;
+}
+
+.video-card_img {
+  display: block;
+  width: 400px;
+  height: auto;
+  margin: auto;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-icon {
+width: 25px;
+}
+
+.mdc-button{
+  min-width: auto;
+}
+
+.card_mat-header {
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.mat-mdc-card-header {
+  padding: 0 10px;
+}
+
+.card_mat-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: 5px;
+}
+
+

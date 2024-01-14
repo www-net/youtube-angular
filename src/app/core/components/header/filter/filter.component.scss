@@ -1,0 +1,49 @@
+.filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  list-style: none;
+
+}
+
+.filter__form {
+  display: flex;
+  align-items: center;
+}
+
+.filter__text {
+  margin-right: 5px;
+}
+
+.filter__btn {
+  border: none;
+  background-color: var(--basic-gray);
+  color: var(--basic-blue);
+  padding: 10px;
+  cursor: pointer;
+}
+
+.mat-form-filter {
+  margin-top: 7px;
+  width: 115%;
+}
+
+.mat-mdc-text-field-wrapper {
+  width: 115%;
+}
+
+
+.filter__form-text {
+  margin: 0 10px;
+  padding-top: 3px;
+  color: var(--basic-blue);
+
+}
