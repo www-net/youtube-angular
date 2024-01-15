@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-content>
-    <img class="video-card_img" mat-card-image [src]="cardData.snippet.thumbnails.medium.url" width="223" [alt]="cardData.snippet.title">
+    <img class="video-card_img" mat-card-image [src]="cardData.snippet.thumbnails.medium.url" width="400" height="225" [alt]="cardData.snippet.title">
     <mat-card-actions>
       <mat-icon color="primary">visibility</mat-icon>
       <button class="video-card_btn" mat-button>{{cardData.statistics.viewCount | number}}</button>

@@ -5,7 +5,7 @@
   <div class="video">
     <img [src]="cardData.snippet.thumbnails.maxres.url" width="704" height="396" alt="preview image" />
   </div>
-  <div class="right-side">
+  <div class="right-side" [appBorderBottomColor]="cardData.snippet.publishedAt">
     <div class="right-side__container">
       <h1 class="title">{{ cardData.snippet.title }}</h1>
       <div class="date">{{ cardData.snippet.publishedAt | date:'fullDate' }}</div>
