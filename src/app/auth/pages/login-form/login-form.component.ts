@@ -3,8 +3,14 @@ import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/f
 import { LoginService, ILogin } from '../../services/login.service'
 import { Router } from '@angular/router'
 
-// минимальная длина пароля
-const minLength = 6
+// пароль должен содержать:
+// от одной строчной латинской буквы,
+// от одной прописной латинской буквы,
+// от одной цифры,
+// от одного спецсимвола.
+// минимальная длина пароля = 8 символов
+const passwordPattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\\w\\s]).{8,}'
+
 
 @Component({
   selector: 'app-login-form',
@@ -18,7 +24,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       login: new FormControl('', [Validators.email, Validators.required]),
-      password: new FormControl('', [Validators.required, this.checkLength])
+      password: new FormControl('', [Validators.required, Validators.pattern(passwordPattern)]),
     })
   }
 
@@ -34,17 +40,6 @@ export class LoginFormComponent implements OnInit {
     this.loginService.login(<ILogin> this.form.value)
     this.router.navigate(['/youtube'])
   }
-
-  // проверка длины пароля
-  checkLength(control: FormControl): ValidationErrors | null {
-    if (control.value.trim().length < minLength) {
-      return {
-        lengthError: true,
-      }
-    }
-    return null
-  }
-
 
   get login() {
     return this.form.get('login')

@@ -1,27 +1,29 @@
 <div class="wrapper">
-    <div class="login">
-      <h2>Login</h2>
-      <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="login">
+    <h2>Login</h2>
+    <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-        <mat-form-field class="login__field" appearance="fill">
-          <mat-label>Enter your Login</mat-label>
-          <input type="text" matInput placeholder="Done Joe" formControlName="login">
-          <mat-error *ngIf="login?.invalid">Enter valid Login</mat-error>
-        </mat-form-field>
+      <mat-form-field class="input__field" appearance="fill">
+        <mat-label>Enter your Login</mat-label>
+        <input type="text" matInput placeholder="Done Joe" formControlName="login">
+        <mat-error *ngIf="login?.errors?.['required']">Please enter a login email!</mat-error>
+        <mat-error *ngIf="login?.errors?.['email']">The login email is invalid!</mat-error>
+      </mat-form-field>
 
-        <mat-form-field class="login__field" appearance="fill">
-          <mat-label>Enter your password</mat-label>
-          <input type="password" matInput placeholder="******" formControlName="password">
-          <mat-error *ngIf="password?.invalid">Enter valid password</mat-error>
-        </mat-form-field>
+      <mat-form-field class="input__field" appearance="fill">
+        <mat-label>Enter your password</mat-label>
+        <input type="password" matInput placeholder="******" formControlName="password">
+        <mat-error *ngIf="password?.errors?.['required']">Please enter a password!</mat-error>
+        <mat-error *ngIf="password?.errors?.['pattern']">
+          Your password isn't strong enough,
+          you need enter at least 8 characters
+          (letters and numbers), uppercase and
+          lowercase letters, special character!
+        </mat-error>
+      </mat-form-field>
 
-        <button
-          type="submit"
-          mat-raised-button
-          color="primary"
-          [disabled]="form.invalid"
-        >Login</button>
+      <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Login</button>
 
-      </form>
-    </div>
+    </form>
   </div>
+</div>
