@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module'
 import { MaterialDesignModule } from './material-design/material-design.module'
 import { CommonModule } from '@angular/common'
@@ -12,6 +12,7 @@ import { SearchInputComponent } from './core/components/header/search-input/sear
 import { LoginComponent } from './core/components/header/login/login.component'
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
 import { AuthModule } from './auth/auth.module'
+import { CreateCardComponent } from './core/pages/create-card/create-card.component'
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { AuthModule } from './auth/auth.module'
     SearchInputComponent,
     LoginComponent,
     PageNotFoundComponent,
+    CreateCardComponent,
 
   ],
   imports: [
@@ -31,7 +33,8 @@ import { AuthModule } from './auth/auth.module'
     BrowserAnimationsModule,
     MaterialDesignModule,
     FormsModule,
-    AuthModule
+    AuthModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
