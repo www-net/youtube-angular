@@ -37,15 +37,21 @@ export class LoginFormComponent implements OnInit {
   onSubmit() {
     this.form.value.login = this.form.value.login?.trim()
     this.form.value.password = this.form.value.password?.trim()
-    this.loginService.login(<ILogin> this.form.value)
+    this.loginService.login(<ILogin>this.form.value)
     this.router.navigate(['/youtube'])
   }
 
-  get login() {
-    return this.form.get('login')
+  get loginValid() {
+    return {
+      required: this.form.get('login')?.errors?.['required'],
+      email: this.form.get('login')?.errors?.['email']
+    }
   }
 
-  get password() {
-    return this.form.get('password')
+  get passwordValid() {
+    return {
+      required: this.form.get('password')?.errors?.['required'],
+      pattern: this.form.get('password')?.errors?.['pattern']
+    }
   }
 }

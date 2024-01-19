@@ -6,15 +6,15 @@
       <mat-form-field class="input__field" appearance="fill">
         <mat-label>Enter your Login</mat-label>
         <input type="text" matInput placeholder="Done Joe" formControlName="login">
-        <mat-error *ngIf="login?.errors?.['required']">Please enter a login email!</mat-error>
-        <mat-error *ngIf="login?.errors?.['email']">The login email is invalid!</mat-error>
+        <mat-error *ngIf="loginValid.required">Please enter a login email!</mat-error>
+        <mat-error *ngIf="loginValid.email">The login email is invalid!</mat-error>
       </mat-form-field>
 
       <mat-form-field class="input__field" appearance="fill">
         <mat-label>Enter your password</mat-label>
         <input type="password" matInput placeholder="******" formControlName="password">
-        <mat-error *ngIf="password?.errors?.['required']">Please enter a password!</mat-error>
-        <mat-error *ngIf="password?.errors?.['pattern']">
+        <mat-error *ngIf="passwordValid.required">Please enter a password!</mat-error>
+        <mat-error *ngIf="passwordValid.pattern">
           Your password isn't strong enough,
           you need enter at least 8 characters
           (letters and numbers), uppercase and
