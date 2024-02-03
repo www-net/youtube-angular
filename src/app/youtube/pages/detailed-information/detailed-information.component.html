@@ -1,9 +1,9 @@
-<div class="item">
+<div class="item" *ngIf="cardData">
   <a class="back-button" routerLink="../">
     <mat-icon class="arrow-back">arrow_back_ios</mat-icon>
   </a>
   <div class="video">
-    <img [src]="cardData.snippet.thumbnails.maxres.url" width="704" height="396" alt="preview image" />
+    <img [src]="cardData.snippet.thumbnails.high.url" width="704" height="396" alt="cardData.snippet.title" />
   </div>
   <div class="right-side" [appBorderBottomColor]="cardData.snippet.publishedAt">
     <div class="right-side__container">
@@ -25,7 +25,7 @@
       </li>
       <li class="dislike-count">
         <mat-icon color="primary">thumb_down</mat-icon>
-        {{ cardData.statistics.dislikeCount | number }}
+        {{ dislikeCount | number }}
       </li>
       <li class="comment-count">
         <mat-icon color="primary">forum</mat-icon>

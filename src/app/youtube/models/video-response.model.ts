@@ -1,13 +1,13 @@
-import { ISearchItem } from './search-item.model'
+import { IVideoItem } from './video-item.model'
 
-export interface ISearchResponse {
+export interface IVideoResponse {
   kind: string,
   etag: string,
+  items: IVideoItem[],
   pageInfo: {
     totalResults: number,
     resultsPerPage: number,
   },
-  items: ISearchItem[],
 
 }
 

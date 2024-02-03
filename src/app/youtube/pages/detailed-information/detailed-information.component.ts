@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { Subscription } from 'rxjs'
-import { response } from '../../models/mock-response.model'
-import { ISearchItem } from '../../models/search-item.model'
+import { IVideoItem } from '../../models/video-item.model'
+import { ResultsService } from '../../services/results.service'
 
 @Component({
   selector: 'app-detailed-information',
@@ -12,15 +12,18 @@ import { ISearchItem } from '../../models/search-item.model'
 export class DetailedInformationComponent implements OnInit, OnDestroy {
   private sub: Subscription | undefined
   id = ''
-  cardData!: ISearchItem
+  cardData!: IVideoItem
+  dislikeCount = 10
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(private activatedRoute: ActivatedRoute, private resultService: ResultsService) {
   }
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe((params) => {
       this.id = params['id']
-      this.cardData = <ISearchItem>response.items.find((item) => item.id === this.id)
+      this.resultService.getVideoById(this.id).subscribe((video) => {
+        this.cardData = <IVideoItem>video.items[0]
+      })
     })
   }
 

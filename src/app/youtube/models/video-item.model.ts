@@ -1,12 +1,9 @@
 import { TThumbnailsItem } from "./thumbnails-item.model"
 
-export interface ISearchItem {
+export interface IVideoItem {
   kind: string,
   etag: string,
-  id: {
-    kind: string,
-    videoId: string
-  },
+  id: string,
   snippet: {
     publishedAt: string,
     channelId: string,

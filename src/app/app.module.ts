@@ -13,6 +13,7 @@ import { LoginComponent } from './core/components/header/login/login.component'
 import { PageNotFoundComponent } from './core/pages/page-not-found/page-not-found.component'
 import { AuthModule } from './auth/auth.module'
 import { CreateCardComponent } from './core/pages/create-card/create-card.component'
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CreateCardComponent } from './core/pages/create-card/create-card.compon
     MaterialDesignModule,
     FormsModule,
     AuthModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
