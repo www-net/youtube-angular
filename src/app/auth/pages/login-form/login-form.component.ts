@@ -20,7 +20,6 @@ const passwordPattern = '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\\w\\s]).{8,}'
 export class LoginFormComponent implements OnInit {
   form!: FormGroup
 
-
   ngOnInit(): void {
     this.form = new FormGroup({
       login: new FormControl('', [Validators.email, Validators.required]),
