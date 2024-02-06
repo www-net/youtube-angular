@@ -11,22 +11,26 @@ import { ResultsService } from 'src/app/youtube/services/results.service'
 export class SearchInputComponent {
 
   @Output() clickTune: EventEmitter<boolean> = new EventEmitter<boolean>()
+  inputValue = ''
 
-  constructor(private filter: FilterService, private results: ResultsService, private router: Router) {
+  constructor(
+    private filter: FilterService,
+    private results: ResultsService,
+    private router: Router
+  ) { }
 
-  }
-
-  value = ''
-
-  onClickSearchButton(){
-    if(this.value.trim()) {
-      this.results.isShow = true
-      this.router.navigate(['/youtube'])
-    }
-  }
-
-  onTuneClick(){
+  onTuneClick() {
     this.clickTune.emit()
     this.filter.value = ''
+  }
+
+  onChange(event: KeyboardEvent) {
+    const { value } = <HTMLInputElement>event.target
+    const { length } = value.trim()
+    if (length >= 3) {
+      this.results.isShow = true
+      this.router.navigate(['/youtube'])
+      this.results.searchValue.next(value)
+    }
   }
 }

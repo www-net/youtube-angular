@@ -5,14 +5,14 @@
 
 .header__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
   grid-template-areas:
     "left-h-top center-h-top center-h-top right-h-top"
     "left-h-bottom center-h-bottom center-h-bottom righth-h-bottom"
   ;
   max-width: 1200px;
   margin: auto;
-  padding: 30px;
+  padding: 2rem 0.5rem 2rem 0.5rem;
 }
 
 .header__search-block {
@@ -37,7 +37,8 @@
   grid-area: right-h-top;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
+  padding-left: 0.8rem;
 }
 
 .header-filter {

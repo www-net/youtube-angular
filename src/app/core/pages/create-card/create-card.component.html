@@ -1,0 +1,77 @@
+<div class="card">
+  <h1 class="card__title">Create new card</h1>
+
+  <form class="card__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-form-field">
+      <mat-label>Title</mat-label>
+      <input
+      matInput
+      type="text"
+      formControlName="title"
+      placeholder="Please enter a title"
+      >
+      <mat-error *ngIf="titleValid.required">Please enter a title</mat-error>
+      <mat-error *ngIf="titleValid.minLength">The title is too short</mat-error>
+      <mat-error *ngIf="titleValid.maxLength">The title is too long</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-form-field">
+      <mat-label>Discription</mat-label>
+      <input
+      matInput
+      type="text"
+      formControlName="description"
+      >
+      <mat-error *ngIf="descriptionValid.maxLength">The description is too long</mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Img</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="image"
+        placeholder="Please enter a link to the image"
+      >
+      <mat-error *ngIf="imageValid.required">Please enter a link to the image!</mat-error>
+      <mat-error *ngIf="imageValid.pattern">The image link is invalid!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Link video</mat-label>
+      <input
+        type="text"
+        matInput
+        formControlName="video"
+        placeholder="Please enter a link to the video"
+      >
+      <mat-error *ngIf="videoValid.required">Please enter a link to the video!</mat-error>
+      <mat-error *ngIf="videoValid.pattern">The video link is invalid!</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="input__field">
+      <mat-label>Video date</mat-label>
+      <input
+        type="date"
+        matInput
+        formControlName="date"
+        placeholder="Please enter a creation date"
+      >
+      <mat-error *ngIf="dateValid.required">Please enter a creation date!</mat-error>
+      <mat-error *ngIf="dateValid.futureDate">The date is invalid!</mat-error>
+    </mat-form-field>
+
+
+    <button
+    class="form__button"
+    type="submit"
+    mat-raised-button
+    color="primary"
+    [disabled]="!form.valid"
+    >
+    Create card
+    </button>
+  </form>
+</div>

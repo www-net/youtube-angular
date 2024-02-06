@@ -1,4 +1,11 @@
-<div>
-  <span>Your Name</span>
-  <button [routerLink]="['/login']" class="user-btn" mat-raised-button color="primary"></button>
+<div class="login">
+  <div class="login__nav">
+    <button class="login-btn" color="basic" mat-raised-button (click)="onButtonClick()">
+      {{ buttonText() }}
+    </button>
+  </div>
+  <div>
+    <span>Your Name</span>
+    <button class="user-btn" mat-raised-button color="primary"></button>
+  </div>
 </div>

@@ -33,14 +33,12 @@ export class BorderBottomColorDirective implements AfterViewInit {
   constructor(private elRef: ElementRef, private renderer2: Renderer2) {
   }
 
-
   ngAfterViewInit(): void {
     const receiveDate: Date = new Date(this.date)
     const now: Date = new Date()
     const diffMilliseconds: number = now.getTime() - receiveDate.getTime()
     const numberOfDays = Math.floor(diffMilliseconds / MILLISECONDS_IN_DAY)
     this.renderer2.setStyle(this.elRef.nativeElement, 'border-bottom', '10px solid transparent')
-    this.renderer2.setStyle(this.elRef.nativeElement, 'border-radius', '5px')
     this.renderer2.setStyle(this.elRef.nativeElement, 'border-color', getColor(numberOfDays))
   }
 }
