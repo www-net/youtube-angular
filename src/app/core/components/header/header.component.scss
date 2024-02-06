@@ -5,7 +5,7 @@
 
 .header__wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
   grid-template-areas:
     "left-h-top center-h-top center-h-top right-h-top"
     "left-h-bottom center-h-bottom center-h-bottom righth-h-bottom"

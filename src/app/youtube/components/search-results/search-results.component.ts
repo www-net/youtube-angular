@@ -36,7 +36,7 @@ export class SearchResultsComponent implements OnInit, OnDestroy {
 
   getVideo(): Subscription {
     return this.resultService.searchValue.pipe(
-      debounceTime(300),
+      debounceTime(500),
       distinctUntilChanged(),
       mergeMap((value) => this.resultService.getSearchResult(value)),
       map((items) => this.resultService.getId(items)),

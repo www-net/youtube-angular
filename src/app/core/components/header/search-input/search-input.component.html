@@ -3,7 +3,6 @@
     <mat-form-field class="mat-form-header" role="search" action="/search" method="get">
       <input matInput placeholder="What are you want to find out?" type="search" name="search-text" [(ngModel)]="inputValue" (keyup)="onChange($event)">
     </mat-form-field>
-    <button class="search-button" mat-raised-button color="primary" (click)="onClickSearchButton()">search</button>
   </form>
   <button class="header-form__button" mat-raised-button color="primary" (click)="onTuneClick()"></button>
 </div>

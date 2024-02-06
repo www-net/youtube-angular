@@ -19,13 +19,6 @@ export class SearchInputComponent {
     private router: Router
   ) { }
 
-  onClickSearchButton() {
-    if (this.inputValue.trim()) {
-      this.results.isShow = true
-      this.router.navigate(['/youtube'])
-    }
-  }
-
   onTuneClick() {
     this.clickTune.emit()
     this.filter.value = ''
