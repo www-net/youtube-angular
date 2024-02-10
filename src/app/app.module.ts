@@ -15,6 +15,7 @@ import { AuthModule } from './auth/auth.module'
 import { CreateCardComponent } from './core/pages/create-card/create-card.component'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { YoutubeInterceptorsToken } from './shared/validators/youtube-token.interceptor'
+import { StoreModule } from '@ngrx/store'
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -43,6 +44,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AuthModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({},{})
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
