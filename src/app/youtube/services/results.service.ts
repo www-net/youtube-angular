@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
-import { BehaviorSubject, Observable, map } from 'rxjs'
+import { Observable, map } from 'rxjs'
 import { IVideoResponse } from '../models/video-response.model'
 import { ISearchItem } from '../models/search-item.model'
 import { ISearchResponse } from '../models/search-response.model'
@@ -10,13 +10,11 @@ const URL_SEARCH ='https://www.googleapis.com/youtube/v3/search?type=video&part=
 const URL_VIDEO = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics'
 
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class ResultsService {
   private isShowResults = false
-  public searchValue: BehaviorSubject<string> = new BehaviorSubject<string>('')
 
   constructor(private http: HttpClient) { }
 
