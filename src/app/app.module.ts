@@ -20,6 +20,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { EffectsModule } from '@ngrx/effects'
 import { YoutubeEffects } from './redux/effects/youtube.effects'
 import { youtubeCardsReducer } from './redux/reducer/youtubeCards.reducer'
+import { customCardsReducer } from './redux/reducer/customCard.reduser'
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -48,7 +49,10 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AuthModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({youtubeCards: youtubeCardsReducer}),
+    StoreModule.forRoot({
+      youtubeCards: youtubeCardsReducer,
+      customCards: customCardsReducer,
+    }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([YoutubeEffects])
   ],

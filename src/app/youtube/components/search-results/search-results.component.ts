@@ -5,6 +5,8 @@ import { IVideoItem } from '../../models/video-item.model'
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
 import { selectYoutubeCards } from 'src/app/redux/selectors/youtubeCards.selectors'
+import { selectCustomCards } from 'src/app/redux/selectors/customCards.selector'
+import { ICustomCard } from 'src/app/redux/actions/customCard.actions'
 
 
 @Component({
@@ -15,6 +17,7 @@ import { selectYoutubeCards } from 'src/app/redux/selectors/youtubeCards.selecto
 export class SearchResultsComponent {
 
   public items$: Observable<IVideoItem[]> = this.store.select(selectYoutubeCards)
+  public customCards$: Observable<ICustomCard[]> = this.store.select(selectCustomCards)
 
   constructor(
     public filter: FilterService,

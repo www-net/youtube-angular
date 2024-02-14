@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
+import { Store } from '@ngrx/store'
+import { postCustomCard } from 'src/app/redux/actions/customCard.actions'
 import { CustomValidators } from 'src/app/shared/validators/date-validation.validator'
 
 
@@ -14,18 +16,21 @@ const urlRegEx = '^(https?://)?([\\w./]+)\\.(\\w){2,6}/?'
 export class CreateCardComponent implements OnInit {
   form!: FormGroup
 
+  constructor(private store: Store) { }
+
   ngOnInit(): void {
     this.form = new FormGroup({
       title: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
       description: new FormControl('', [Validators.maxLength(255)]),
-      image: new FormControl('', [Validators.required, Validators.pattern(urlRegEx)]),
-      video: new FormControl('', [Validators.required, Validators.pattern(urlRegEx)]),
-      date: new FormControl('', [Validators.required, CustomValidators.dateValidation()]),
+      imageUrl: new FormControl('', [Validators.required, Validators.pattern(urlRegEx)]),
+      videoUrl: new FormControl('', [Validators.required, Validators.pattern(urlRegEx)]),
+      publishedAt: new FormControl('', [Validators.required, CustomValidators.dateValidation()]),
     })
   }
 
   onSubmit() {
-    console.log('click on submit')
+    const card = this.form.value
+    this.store.dispatch(postCustomCard({card}))
   }
 
   get titleValid() {
