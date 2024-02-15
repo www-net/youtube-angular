@@ -4,7 +4,7 @@ import { SortService } from 'src/app/youtube/services/sort.service'
 import { IVideoItem } from '../../models/video-item.model'
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
-import { selectStor } from 'src/app/redux/selectors/store.selector'
+import { selectStore } from 'src/app/redux/selectors/store.selector'
 
 
 @Component({
@@ -14,7 +14,7 @@ import { selectStor } from 'src/app/redux/selectors/store.selector'
 })
 export class SearchResultsComponent {
 
-  public store$: Observable<IVideoItem[]> = this.store.select(selectStor)
+  public store$: Observable<IVideoItem[]> = this.store.select(selectStore)
 
   constructor(
     public filter: FilterService,

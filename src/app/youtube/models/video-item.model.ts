@@ -3,7 +3,7 @@ import { TThumbnailsItem } from "./thumbnails-item.model"
 export interface IVideoItem {
   kind?: string,
   etag?: string,
-  id?: string,
+  id: string,
   snippet: {
     publishedAt: string,
     channelId?: string,
