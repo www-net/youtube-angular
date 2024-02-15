@@ -1,37 +1,37 @@
 import { TThumbnailsItem } from "./thumbnails-item.model"
 
 export interface IVideoItem {
-  kind: string,
-  etag: string,
+  kind?: string,
+  etag?: string,
   id: string,
   snippet: {
     publishedAt: string,
-    channelId: string,
+    channelId?: string,
     title: string,
     description: string,
     thumbnails: {
-      default: TThumbnailsItem,
+      default?: TThumbnailsItem,
       medium: TThumbnailsItem,
       high: TThumbnailsItem,
-      standard: TThumbnailsItem,
-      maxres: TThumbnailsItem
+      standard?: TThumbnailsItem,
+      maxres?: TThumbnailsItem
     },
-    channelTitle: string,
-    tags: string[],
-    categoryId: string,
-    liveBroadcastContent: string,
+    channelTitle?: string,
+    tags?: string[],
+    categoryId?: string,
+    liveBroadcastContent?: string,
     defaultLanguage?: string,
-    localized: {
+    localized?: {
       title: string,
       description: string,
     },
-    defaultAudioLanguage: string,
+    defaultAudioLanguage?: string,
   },
   statistics: {
     viewCount: string,
     likeCount: string,
     dislikeCount: string,
-    favoriteCount: string,
+    favoriteCount?: string,
     commentCount: string,
   }
 }

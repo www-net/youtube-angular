@@ -11,10 +11,10 @@ export class FilterPipe implements PipeTransform {
       return items
     }
 
-    let newItems: IVideoItem[] = [...items]
+    let newItems: IVideoItem[] = []
 
     if(filterValue) {
-      newItems = this.filter(newItems, filterValue)
+      newItems = this.filter(items, filterValue)
     }
 
     return newItems

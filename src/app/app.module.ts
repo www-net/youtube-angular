@@ -1,4 +1,4 @@
-import { NgModule, Provider } from '@angular/core'
+import { NgModule, Provider, isDevMode } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
@@ -15,6 +15,12 @@ import { AuthModule } from './auth/auth.module'
 import { CreateCardComponent } from './core/pages/create-card/create-card.component'
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { YoutubeInterceptorsToken } from './shared/validators/youtube-token.interceptor'
+import { StoreModule } from '@ngrx/store'
+import { StoreDevtoolsModule } from '@ngrx/store-devtools'
+import { EffectsModule } from '@ngrx/effects'
+import { YoutubeEffects } from './redux/effects/youtube.effects'
+import { youtubeCardsReducer } from './redux/reducer/youtubeCards.reducer'
+import { customCardsReducer } from './redux/reducer/customCard.reduser'
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -43,6 +49,12 @@ const INTERCEPTOR_PROVIDER: Provider = {
     AuthModule,
     ReactiveFormsModule,
     HttpClientModule,
+    StoreModule.forRoot({
+      youtubeCards: youtubeCardsReducer,
+      customCards: customCardsReducer,
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([YoutubeEffects])
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]

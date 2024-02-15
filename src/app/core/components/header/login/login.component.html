@@ -3,6 +3,12 @@
     <button class="login-btn" color="basic" mat-raised-button (click)="onButtonClick()">
       {{ buttonText() }}
     </button>
+    <a
+    *ngIf="isLoggedIn"
+    color="basic"
+    mat-raised-button
+    routerLink="/admin"
+    >Create card</a>
   </div>
   <div>
     <span>Your Name</span>

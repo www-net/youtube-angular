@@ -15,7 +15,6 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "rules": {
-
         "@angular-eslint/component-selector": [
           "error",
           {
@@ -24,7 +23,10 @@
             "style": "kebab-case"
           }
         ],
-        "semi": ["error", "never"],
+        "semi": [
+          "error",
+          "never"
+        ],
         "@typescript-eslint/semi": "off"
       }
     },
@@ -39,6 +41,14 @@
         "plugin:prettier/recommended"
       ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:@ngrx/recommended-requiring-type-checking"
+      ]
     }
   ]
 }
