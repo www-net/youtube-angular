@@ -37,10 +37,12 @@ width: 25px;
 .card_mat-header {
   justify-content: center;
   margin: 0 10px;
+  overflow: hidden;
 }
 
 .mat-mdc-card-header {
   padding: 0 10px;
+  height: 65px;
 }
 
 .card_mat-footer {

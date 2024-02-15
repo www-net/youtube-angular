@@ -112,5 +112,4 @@ export class CreateCardComponent implements OnInit {
     this.store.dispatch(postCustomCard({ card }))
     this.form.reset()
   }
-
 }
