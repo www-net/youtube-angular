@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Store } from '@ngrx/store'
 import { ICustomCard, postCustomCard } from 'src/app/redux/actions/customCard.actions'
@@ -15,6 +15,7 @@ const urlRegEx = '^(https?://)?([\\w./]+)\\.(\\w){2,6}/?'
 })
 export class CreateCardComponent implements OnInit {
   form!: FormGroup
+  @ViewChild('formDirective') formDirective: ElementRef
 
   constructor(private store: Store) { }
 
@@ -28,43 +29,63 @@ export class CreateCardComponent implements OnInit {
     })
   }
 
+  get title() {
+    return this.form.get('title')
+  }
+
   get titleValid() {
     return {
-      required: this.form.get('title')?.errors?.['required'],
-      minLength: this.form.get('title')?.errors?.['minlength'],
-      maxLength: this.form.get('title')?.errors?.['maxlength'],
+      required: this.title?.errors?.['required'],
+      minLength: this.title?.errors?.['minlength'],
+      maxLength: this.title?.errors?.['maxlength'],
     }
+  }
+
+  get description() {
+    return this.form.get('description')
   }
 
   get descriptionValid() {
     return {
-      maxLength: this.form.get('description')?.errors?.['maxlength']
+      maxLength: this.description?.errors?.['maxlength']
     }
+  }
+
+  get imageUrl() {
+    return this.form.get('imageUrl')
   }
 
   get imageValid() {
     return {
-      required: this.form.get('image')?.errors?.['required'],
-      pattern: this.form.get('image')?.errors?.['pattern']
+      required: this.imageUrl?.errors?.['required'],
+      pattern: this.imageUrl?.errors?.['pattern']
     }
+  }
+
+  get videoUrl() {
+    return this.form.get('videoUrl')
   }
 
   get videoValid() {
     return {
-      required: this.form.get('video')?.errors?.['required'],
-      pattern: this.form.get('video')?.errors?.['pattern']
+      required: this.videoUrl?.errors?.['required'],
+      pattern: this.videoUrl?.errors?.['pattern']
     }
+  }
+
+  get publishedAt() {
+    return this.form.get('publishedAt')
   }
 
   get dateValid() {
     return {
-      required: this.form.get('date')?.errors?.['required'],
-      futureDate: this.form.get('date')?.errors?.['isFutureDate']
+      required: this.publishedAt?.errors?.['required'],
+      futureDate: this.publishedAt?.errors?.['isFutureDate']
     }
   }
 
   onSubmit() {
-    const {title, description, imageUrl, publishedAt } = <ICustomCard>this.form.value
+    const { title, description, imageUrl, publishedAt } = <ICustomCard>this.form.value
     const id: string = Math.random().toString()
     const card = {
       id,
@@ -89,6 +110,7 @@ export class CreateCardComponent implements OnInit {
       },
     }
     this.store.dispatch(postCustomCard({ card }))
+    this.form.reset()
   }
 
 }
