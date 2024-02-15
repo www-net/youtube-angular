@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Store } from '@ngrx/store'
-import { postCustomCard } from 'src/app/redux/actions/customCard.actions'
+import { ICustomCard, postCustomCard } from 'src/app/redux/actions/customCard.actions'
 import { CustomValidators } from 'src/app/shared/validators/date-validation.validator'
 
 
@@ -26,11 +26,6 @@ export class CreateCardComponent implements OnInit {
       videoUrl: new FormControl('', [Validators.required, Validators.pattern(urlRegEx)]),
       publishedAt: new FormControl('', [Validators.required, CustomValidators.dateValidation()]),
     })
-  }
-
-  onSubmit() {
-    const card = this.form.value
-    this.store.dispatch(postCustomCard({card}))
   }
 
   get titleValid() {
@@ -67,4 +62,31 @@ export class CreateCardComponent implements OnInit {
       futureDate: this.form.get('date')?.errors?.['isFutureDate']
     }
   }
+
+  onSubmit() {
+    const {title, description, imageUrl, publishedAt } = <ICustomCard>this.form.value
+    const card = {
+      snippet: {
+        title,
+        description,
+        publishedAt,
+        thumbnails: {
+          medium: {
+            url: imageUrl,
+          },
+          high: {
+            url: imageUrl,
+          },
+        },
+      },
+      statistics: {
+        viewCount: '555',
+        likeCount: '444',
+        dislikeCount: '111',
+        commentCount: '50',
+      },
+    }
+    this.store.dispatch(postCustomCard({ card }))
+  }
+
 }

@@ -1,8 +1,8 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store'
 import { IVideoItem } from '../../youtube/models/video-item.model'
 
-export const selectYoutube = createFeatureSelector<{ videos: IVideoItem[] }>('youtubeCards')
+export const selectYoutubeFeature = createFeatureSelector<{ videos: IVideoItem[] }>('youtubeCards')
 export const selectYoutubeCards = createSelector(
-  selectYoutube,
+  selectYoutubeFeature,
   (youtubeCards) => youtubeCards.videos,
 )
