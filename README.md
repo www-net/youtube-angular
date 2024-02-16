@@ -12,7 +12,6 @@ During the [Angular course](https://rs.school/angular/), I'm implement the YouTu
 
 ## Deploy
 
-You can try the application by clicking on the link
-[YouTube Client](https://www-net.github.io/youtube-angular/)
+You can try the application by deploying it locally using the **ng serve** command.
 
 ![YouTube Client](/src/assets/screenshots/Angular.png)
